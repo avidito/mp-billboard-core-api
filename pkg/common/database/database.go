@@ -22,5 +22,8 @@ func Init(url string) *gorm.DB {
 func doMigration(db *gorm.DB) {
 	db.AutoMigrate(
 		&domain.Billboard{},
+		&domain.Design{},
+		&domain.Status{},
+		&domain.BillboardVersion{},
 	)
 }
