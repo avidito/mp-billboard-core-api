@@ -45,3 +45,25 @@ type BillboardVersionReadResponse struct {
 	Address     string             `json:"address"`
 	Amount      int64              `json:"amount"`
 }
+
+type ContractResponse struct {
+	ID                 int64     `json:"id" gorm:"primaryKey;AUTO_INCREMENT"`
+	BillboardVersionID int64     `json:"billboard_version_id"`
+	ContractTypeID     int64     `json:"contract_type_id"`
+	Name               string    `json:"name"`
+	Type               string    `json:"type"`
+	Description        string    `json:"description"`
+	Filepath           string    `json:"filepath"`
+	CreatedDt          time.Time `json:"created_dt"`
+	ModifiedDt         time.Time `json:"modified_dt"`
+}
+
+type ContractReadResponse struct {
+	ID           int64  `json:"id"`
+	VersionName  string `json:"version_name"`
+	ContractType string `json:"contract_type"`
+	Name         string `json:"name"`
+	Type         string `json:"type"`
+	Description  string `json:"description"`
+	Filepath     string `json:"filepath"`
+}

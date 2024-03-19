@@ -25,5 +25,7 @@ func doMigration(db *gorm.DB) {
 		&domain.Design{},
 		&domain.Status{},
 		&domain.BillboardVersion{},
+		&domain.ContractType{},
+		&domain.Contract{},
 	)
 }
